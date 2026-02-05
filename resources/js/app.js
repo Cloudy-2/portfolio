@@ -319,3 +319,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ===================================
+// Explosive Skills Card Interaction
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    const skillCards = document.querySelectorAll('.skill-card-explosive');
+
+    skillCards.forEach(card => {
+        card.addEventListener('click', function () {
+            // Toggle between collapsed and exploded states
+            const isCollapsed = this.classList.contains('collapsed');
+
+            // Close all other cards first
+            skillCards.forEach(otherCard => {
+                if (otherCard !== this) {
+                    otherCard.classList.remove('exploded');
+                    otherCard.classList.add('collapsed');
+                }
+            });
+
+            // Toggle current card
+            if (isCollapsed) {
+                this.classList.remove('collapsed');
+                this.classList.add('exploded');
+            } else {
+                this.classList.remove('exploded');
+                this.classList.add('collapsed');
+            }
+        });
+    });
+
+    // Close expanded card when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.skill-card-explosive')) {
+            skillCards.forEach(card => {
+                card.classList.remove('exploded');
+                card.classList.add('collapsed');
+            });
+        }
+    });
+});

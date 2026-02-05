@@ -184,12 +184,30 @@ a:hover {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.logo-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.logo-subtitle {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .nav-menu {
@@ -200,30 +218,44 @@ a:hover {
 
 .nav-link {
     color: var(--text-secondary);
+    text-decoration: none;
     font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-primary);
-    transition: width var(--transition-fast);
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--text-primary);
+    background: rgba(99, 102, 241, 0.1);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-social {
+    display: flex;
+    align-items: center;
+    margin-left: var(--spacing-md);
+}
+
+.github-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: white;
+    font-size: 1.3rem;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.github-icon:hover {
+    background: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
 /* Mobile Menu Toggle */
@@ -242,6 +274,103 @@ a:hover {
     background: var(--text-primary);
     border-radius: 3px;
     transition: all var(--transition-fast);
+}
+
+
+/* ===================================
+   Technical Capabilities Section
+   =================================== */
+.capabilities-grid-simple {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.capability-card-clean {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.capability-card-clean:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 50px rgba(99, 102, 241, 0.25);
+}
+
+.capability-icon-large {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: var(--spacing-sm);
+}
+
+.capability-card-clean h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.badge-small {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.capability-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: var(--spacing-sm) 0;
+}
+
+.cap-tag {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--color-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all var(--transition-fast);
+}
+
+.cap-tag:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: scale(1.05);
+}
+
+.capability-card-clean p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 /* ===================================
@@ -443,8 +572,189 @@ a:hover {
 }
 
 /* ===================================
-   Skill Tags
+   Explosive Skills Section
    =================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.skill-card-explosive {
+    position: relative;
+    min-height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.skill-card-explosive .card-front {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    z-index: 10;
+}
+
+.skill-card-explosive.collapsed .card-front {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.skill-card-explosive.exploded .card-front {
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+}
+
+.skill-card-explosive .card-front:hover {
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+    transform: translateY(-5px);
+}
+
+.skill-card-explosive .card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+}
+
+.skill-card-explosive .card-front:hover .card-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.skill-card-explosive h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+.skill-card-explosive .click-hint {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* Skill Particles */
+.skills-particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.skill-particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(99, 102, 241, 0.5);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 5;
+    min-width: 80px;
+}
+
+.skill-particle i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.skill-particle span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Exploded State - Particles scatter */
+.skill-card-explosive.exploded .skill-particle {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Individual particle positions when exploded */
+.skill-card-explosive.exploded .skill-particle:nth-child(1) {
+    transform: translate(-120px, -100px) scale(1) rotate(-10deg);
+}
+
+.skill-card-explosive.exploded .skill-particle:nth-child(2) {
+    transform: translate(80px, -120px) scale(1) rotate(10deg);
+}
+
+.skill-card-explosive.exploded .skill-particle:nth-child(3) {
+    transform: translate(-100px, 80px) scale(1) rotate(5deg);
+}
+
+.skill-card-explosive.exploded .skill-particle:nth-child(4) {
+    transform: translate(100px, 100px) scale(1) rotate(-5deg);
+}
+
+/* Hover effects on particles */
+.skill-particle:hover {
+    transform: scale(1.15) !important;
+    border-color: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+    z-index: 20;
+}
+
+/* Transition delays for staggered effect */
+.skill-particle:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.skill-particle:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.skill-particle:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.skill-particle:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+/* Restore animation for collapse */
+.skill-card-explosive.collapsed .skill-particle {
+    transform: translate(-50%, -50%) scale(0) !important;
+    opacity: 0;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Skill Tags for other sections */
 .skill-tag {
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-sm);
