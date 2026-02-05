@@ -230,14 +230,14 @@
             
             <div class="animate-on-scroll">
                 <div class="card card-glass">
-                    <div class="grid grid-2" style="align-items: start; gap: var(--spacing-xl);">
+                    <h3 class="text-gradient" style="font-size: 2rem; margin-bottom: var(--spacing-md); text-align: center;">LumiCHAT</h3>
+                    <p style="font-size: 1.1rem; color: var(--color-accent); font-weight: 600; margin-bottom: var(--spacing-lg); text-align: center;">Expert-Based Mental Health Support Chatbot – System Analyst</p>
+                    
+                    <div class="grid grid-2" style="align-items: start; gap: var(--spacing-xl); margin-bottom: var(--spacing-lg);">
                         <div>
-                            <h3 class="text-gradient" style="font-size: 2rem; margin-bottom: var(--spacing-md);">LumiCHAT</h3>
-                            <p style="font-size: 1.1rem; color: var(--color-accent); font-weight: 600; margin-bottom: var(--spacing-md);">Expert-Based Mental Health Support Chatbot – System Analyst</p>
-                            
                             <p style="margin-bottom: var(--spacing-md);">Developed a web-based mental health chatbot using <strong>Laravel</strong>, <strong>React.js</strong>, <strong>Rasa NLP</strong>, and <strong>MySQL</strong>.</p>
                             
-                            <h4 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm);">Key Features:</h4>
+                            <h4 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">Key Features:</h4>
                             <ul style="list-style: none; padding-left: 0;">
                                 <li style="padding: var(--spacing-xs) 0; color: var(--text-secondary);">✓ Implemented intent recognition for user mental health queries</li>
                                 <li style="padding: var(--spacing-xs) 0; color: var(--text-secondary);">✓ Risk-level detection system</li>
@@ -260,12 +260,44 @@
                                     <span>🌐 View Live Demo</span>
                                 </a>
                             </div>
-                            
-                            <div style="background: var(--bg-secondary); padding: var(--spacing-md); border-radius: var(--radius-md); border: 2px solid rgba(99, 102, 241, 0.3); margin-top: var(--spacing-lg);">
-                                <img src="/lumichat-screenshot.png" alt="LumiCHAT Login Interface" style="width: 100%; border-radius: var(--radius-sm); box-shadow: var(--shadow-md);">
-                            </div>
                         </div>
                     </div>
+                            
+                    
+                    <!-- Carousel Showcase -->
+                    <div class="carousel-container" style="margin-top: var(--spacing-lg);">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active">
+                                <img src="/lumichat-chat.png" alt="LumiCHAT Chat Interface">
+                                <div class="carousel-caption">Chat Interface - Real-time mental health support</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/lumichat-chat2.png" alt="LumiCHAT Chat Conversation">
+                                <div class="carousel-caption">Interactive Conversation - Empathetic AI responses</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/lumichat-about.png" alt="LumiCHAT About Page">
+                                <div class="carousel-caption">About LumiCHAT - Expert-based mental health support</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="/lumichat-dashboard.png" alt="LumiCHAT Admin Dashboard">
+                                <div class="carousel-caption">Admin Dashboard - Comprehensive analytics and management</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="carousel-prev" aria-label="Previous slide">‹</button>
+                        <button class="carousel-next" aria-label="Next slide">›</button>
+                        
+                        <!-- Dot Indicators -->
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" data-slide="0"></span>
+                            <span class="carousel-dot" data-slide="1"></span>
+                            <span class="carousel-dot" data-slide="2"></span>
+                            <span class="carousel-dot" data-slide="3"></span>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -315,10 +347,10 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll">Get In Touch</h2>
             
-            <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+            <div style="max-width: 600px; margin: 0 auto;">
                 <div class="animate-on-scroll">
-                    <h3 class="text-gradient">Let's Connect</h3>
-                    <p style="margin-bottom: var(--spacing-lg);">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                    <h3 class="text-gradient" style="text-align: center;">Let's Connect</h3>
+                    <p style="margin-bottom: var(--spacing-lg); text-align: center;">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
                     
                     <div style="display: flex; flex-direction: column; gap: var(--spacing-md);">
                         <div style="display: flex; align-items: center; gap: var(--spacing-md);">
@@ -350,33 +382,17 @@
                                 <p style="margin: 0; color: var(--text-secondary);">Villanueva, Misamis Oriental, 9002</p>
                             </div>
                         </div>
+                        
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <div style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                👤
+                            </div>
+                            <div>
+                                <p style="margin: 0; font-weight: 600;">Facebook</p>
+                                <a href="https://www.facebook.com/cloyd.P.L" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary);">facebook.com/cloyd.P.L</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="animate-on-scroll">
-                    <form id="contact-form" class="card card-glass">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-input">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea id="message" name="message" class="form-textarea" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
